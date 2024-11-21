@@ -1,0 +1,28 @@
+undefined8 main(void)
+
+{
+  int iVar1;
+  long in_FS_OFFSET;
+  char local_68 [48];
+  char local_38 [40];
+  long local_10;
+  
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+  builtin_strncpy(local_38,"picoCTF{3lf_r3v3r5ing_succe55ful_1de0508",0x28);
+  printf("Enter the password to unlock this file: ");
+  __isoc99_scanf(&DAT_00102031,local_68);
+  printf("You entered: %s\n",local_68);
+  iVar1 = strcmp(local_68,local_38);
+  if (iVar1 == 0) {
+    puts("Password correct, please see flag: picoCTF{3lf_r3v3r5ing_succe55ful_1de05085}");
+    puts(local_38);
+  }
+  else {
+    puts("Access denied");
+  }
+  if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return 0;
+}
